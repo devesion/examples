@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/camel/camel.iml" filepath="$PROJECT_DIR$/camel/camel.iml" />
+      <module fileurl="file://$PROJECT_DIR$/concurrency/concurrency.iml" filepath="$PROJECT_DIR$/concurrency/concurrency.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mappers/mappers.iml" filepath="$PROJECT_DIR$/mappers/mappers.iml" />
+    </modules>
+  </component>
+</project>
+

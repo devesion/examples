@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.devesion.examples</groupId>
+    <artifactId>camel</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <packaging>bundle</packaging>
+    <name>${project.groupId}.${project.artifactId}</name>
+
+    <properties>
+        <project.license>devesion</project.license>
+        <project.plugin.compiler.version>2.5.1</project.plugin.compiler.version>
+        <project.plugin.bundle.version>2.3.7</project.plugin.bundle.version>
+        <project.dependency.spring.maven.artifact.version>3.0.7.RELEASE</project.dependency.spring.maven.artifact.version>
+        <project.dependency.spring.osgi.version>1.1.0</project.dependency.spring.osgi.version>
+        <project.plugin.osgi.version>4.2.0</project.plugin.osgi.version>
+        <project.dependency.slf4j.log4j12>1.6.5</project.dependency.slf4j.log4j12>
+        <project.dependency.lombok.version>0.11.0</project.dependency.lombok.version>
+    </properties>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>${project.plugin.compiler.version}</version>
+                <configuration>
+                    <source>1.6</source>
+                    <target>1.6</target>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.felix</groupId>
+                <artifactId>maven-bundle-plugin</artifactId>
+                <version>${project.plugin.bundle.version}</version>
+                <extensions>true</extensions>
+                <configuration>
+                    <instructions>
+                        <Import-Package>
+                            org.osgi.*,
+                            org.osgi.framework,
+                            org.slf4j,
+                            javax.*,
+                            org.springmodules.*,
+                            org.springframework.scheduling.*,
+                            org.springframework.scheduling.support,
+                            org.springframework.scheduling.config,
+                            org.springframework.scheduling.concurrent,
+                            org.springframework.jms.core,
+                            org.springframework.beans.factory.config,
+                            org.apache.activemq,
+                            org.apache.activemq.pool,
+                            org.apache.activemq.camel,
+                            org.apache.activemq.camel.component,
+                            org.apache.camel.component.jms
+                        </Import-Package>
+                    </instructions>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+    <dependencies>
+        <!-- OSGi dependencies -->
+        <dependency>
+            <groupId>org.osgi</groupId>
+            <artifactId>org.osgi.compendium</artifactId>
+            <version>${project.plugin.osgi.version}</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.osgi</groupId>
+            <artifactId>org.osgi.core</artifactId>
+            <version>${project.plugin.osgi.version}</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <!-- Spring dependencies from archetype -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-beans</artifactId>
+            <version>${project.dependency.spring.maven.artifact.version}</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>commons-logging</groupId>
+                    <artifactId>commons-logging</artifactId>
+                </exclusion>
+            </exclusions>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-core</artifactId>
+            <version>${project.dependency.spring.maven.artifact.version}</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>commons-logging</groupId>
+                    <artifactId>commons-logging</artifactId>
+                </exclusion>
+            </exclusions>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.osgi</groupId>
+            <artifactId>spring-osgi-core</artifactId>
+            <version>${project.dependency.spring.osgi.version}</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>aopalliance</groupId>
+                    <artifactId>aopalliance</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>commons-logging</groupId>
+                    <artifactId>commons-logging</artifactId>
+                </exclusion>
+            </exclusions>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context</artifactId>
+            <version>${project.dependency.spring.maven.artifact.version}</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>commons-logging</groupId>
+                    <artifactId>commons-logging</artifactId>
+                </exclusion>
+            </exclusions>
+            <scope>provided</scope>
+        </dependency>
+
+        <!-- Lombok -->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>${project.dependency.lombok.version}</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <!-- Logging -->
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-log4j12</artifactId>
+            <version>${project.dependency.slf4j.log4j12}</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <!-- required by both client and server -->
+        <dependency>
+            <groupId>org.apache.camel</groupId>
+            <artifactId>camel-core</artifactId>
+            <version>2.10.3</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.camel</groupId>
+            <artifactId>camel-jms</artifactId>
+            <version>2.10.3</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.camel</groupId>
+            <artifactId>camel-spring</artifactId>
+            <version>2.10.3</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.activemq</groupId>
+            <artifactId>activemq-camel</artifactId>
+            <version>5.4.2</version> <!-- for compatibility with karaf 2.2.8 -->
+        </dependency>
+        <dependency>
+            <groupId>org.apache.activemq</groupId>
+            <artifactId>activemq-pool</artifactId>
+            <version>5.4.2</version> <!-- for compatibility with karaf 2.2.8 -->
+        </dependency>
+        <dependency>
+            <groupId>org.apache.activemq</groupId>
+            <artifactId>activemq-core</artifactId>
+            <version>5.4.2</version> <!-- for compatibility with karaf 2.2.8 -->
+        </dependency>
+
+        <!-- xbean is required for ActiveMQ broker configuration in the spring xml file -->
+        <dependency>
+            <groupId>org.apache.xbean</groupId>
+            <artifactId>xbean-spring</artifactId>
+            <version>3.12</version>
+        </dependency>
+    </dependencies>
+</project>

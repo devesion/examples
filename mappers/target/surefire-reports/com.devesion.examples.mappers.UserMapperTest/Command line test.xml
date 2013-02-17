@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite hostname="dembol-Inspiron-7720" name="com.devesion.examples.mappers.UserMapperTest" tests="9" failures="0" timestamp="27 Jan 2013 20:01:46 GMT" time="0.298" errors="0">
+  <testcase name="shouldMapObjects" time="0.011" classname="com.devesion.examples.mappers.UserMapperTest"/>
+  <testcase name="shouldMapObjects" time="0.022" classname="com.devesion.examples.mappers.UserMapperTest"/>
+  <testcase name="shouldMapObjects" time="0.123" classname="com.devesion.examples.mappers.UserMapperTest"/>
+  <testcase name="shouldThrowDestinationObjectPreconditionError" time="0.0010" classname="com.devesion.examples.mappers.UserMapperTest"/>
+  <testcase name="shouldThrowDestinationObjectPreconditionError" time="0.0" classname="com.devesion.examples.mappers.UserMapperTest"/>
+  <testcase name="shouldThrowDestinationObjectPreconditionError" time="0.0" classname="com.devesion.examples.mappers.UserMapperTest"/>
+  <testcase name="shouldThrowSourceObjectPreconditionError" time="0.0010" classname="com.devesion.examples.mappers.UserMapperTest"/>
+  <testcase name="shouldThrowSourceObjectPreconditionError" time="0.0" classname="com.devesion.examples.mappers.UserMapperTest"/>
+  <testcase name="shouldThrowSourceObjectPreconditionError" time="0.0" classname="com.devesion.examples.mappers.UserMapperTest"/>
+</testsuite>

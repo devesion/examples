@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" total="9" passed="9">
+  <reporter-output>
+  </reporter-output>
+  <suite name="com.devesion.examples.mappers.UserMapperTest" duration-ms="298" started-at="2013-01-27T21:01:45Z" finished-at="2013-01-27T21:01:46Z">
+    <groups>
+    </groups>
+    <test name="Command line test" duration-ms="298" started-at="2013-01-27T21:01:45Z" finished-at="2013-01-27T21:01:46Z">
+      <class name="com.devesion.examples.mappers.UserMapperTest">
+        <test-method status="PASS" signature="shouldMapObjects(com.devesion.examples.mappers.ObjectMapper)" name="shouldMapObjects" duration-ms="11" started-at="2013-01-27T21:01:46Z" finished-at="2013-01-27T21:01:46Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[com.devesion.examples.mappers.ManualUserMapper@d5d4de6]]>
+              </value>
+            </param>
+          </params>
+        </test-method>
+        <test-method status="PASS" signature="shouldMapObjects(com.devesion.examples.mappers.ObjectMapper)" name="shouldMapObjects" duration-ms="22" started-at="2013-01-27T21:01:46Z" finished-at="2013-01-27T21:01:46Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[com.devesion.examples.mappers.ModelMapper@68a53de4]]>
+              </value>
+            </param>
+          </params>
+        </test-method>
+        <test-method status="PASS" signature="shouldMapObjects(com.devesion.examples.mappers.ObjectMapper)" name="shouldMapObjects" duration-ms="123" started-at="2013-01-27T21:01:46Z" finished-at="2013-01-27T21:01:46Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[com.devesion.examples.mappers.DozerMapper@38827968]]>
+              </value>
+            </param>
+          </params>
+        </test-method>
+        <test-method status="PASS" signature="shouldThrowDestinationObjectPreconditionError(com.devesion.examples.mappers.ObjectMapper)" name="shouldThrowDestinationObjectPreconditionError" duration-ms="1" started-at="2013-01-27T21:01:46Z" finished-at="2013-01-27T21:01:46Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[com.devesion.examples.mappers.ManualUserMapper@d5d4de6]]>
+              </value>
+            </param>
+          </params>
+        </test-method>
+        <test-method status="PASS" signature="shouldThrowDestinationObjectPreconditionError(com.devesion.examples.mappers.ObjectMapper)" name="shouldThrowDestinationObjectPreconditionError" duration-ms="0" started-at="2013-01-27T21:01:46Z" finished-at="2013-01-27T21:01:46Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[com.devesion.examples.mappers.ModelMapper@68a53de4]]>
+              </value>
+            </param>
+          </params>
+        </test-method>
+        <test-method status="PASS" signature="shouldThrowDestinationObjectPreconditionError(com.devesion.examples.mappers.ObjectMapper)" name="shouldThrowDestinationObjectPreconditionError" duration-ms="0" started-at="2013-01-27T21:01:46Z" finished-at="2013-01-27T21:01:46Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[com.devesion.examples.mappers.DozerMapper@38827968]]>
+              </value>
+            </param>
+          </params>
+        </test-method>
+        <test-method status="PASS" signature="shouldThrowSourceObjectPreconditionError(com.devesion.examples.mappers.ObjectMapper)" name="shouldThrowSourceObjectPreconditionError" duration-ms="1" started-at="2013-01-27T21:01:46Z" finished-at="2013-01-27T21:01:46Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[com.devesion.examples.mappers.ManualUserMapper@d5d4de6]]>
+              </value>
+            </param>
+          </params>
+        </test-method>
+        <test-method status="PASS" signature="shouldThrowSourceObjectPreconditionError(com.devesion.examples.mappers.ObjectMapper)" name="shouldThrowSourceObjectPreconditionError" duration-ms="0" started-at="2013-01-27T21:01:46Z" finished-at="2013-01-27T21:01:46Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[com.devesion.examples.mappers.DozerMapper@38827968]]>
+              </value>
+            </param>
+          </params>
+        </test-method>
+        <test-method status="PASS" signature="shouldThrowSourceObjectPreconditionError(com.devesion.examples.mappers.ObjectMapper)" name="shouldThrowSourceObjectPreconditionError" duration-ms="0" started-at="2013-01-27T21:01:46Z" finished-at="2013-01-27T21:01:46Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[com.devesion.examples.mappers.ModelMapper@68a53de4]]>
+              </value>
+            </param>
+          </params>
+        </test-method>
+      </class>
+    </test>
+  </suite>
+</testng-results>

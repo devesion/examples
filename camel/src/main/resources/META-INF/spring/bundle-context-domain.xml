@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:camel="http://camel.apache.org/schema/spring"
+       xmlns:task="http://www.springframework.org/schema/task"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+            http://camel.apache.org/schema/spring http://camel.apache.org/schema/spring/camel-spring.xsd
+            http://www.springframework.org/schema/task http://www.springframework.org/schema/task/spring-task-3.0.xsd">
+
+    <!-- a pooling based JMS provider -->
+    <bean id="jmsFactory" class="org.apache.activemq.pool.PooledConnectionFactory" destroy-method="stop">
+        <property name="connectionFactory">
+            <bean class="org.apache.activemq.ActiveMQConnectionFactory">
+                <property name="brokerURL">
+                    <value>tcp://localhost:61616</value>
+                </property>
+            </bean>
+        </property>
+    </bean>
+
+    <!-- Spring JMS Template -->
+    <bean id="jmsTemplate" class="org.springframework.jms.core.JmsTemplate">
+        <property name="connectionFactory">
+            <ref local="jmsFactory"/>
+        </property>
+    </bean>
+
+    <bean id="jmsConfig" class="org.apache.camel.component.jms.JmsConfiguration">
+        <property name="connectionFactory" ref="jmsFactory"/>
+        <property name="transacted" value="false"/>
+        <property name="concurrentConsumers" value="10"/>
+    </bean>
+
+    <bean id="activemq"
+          class="org.apache.activemq.camel.component.ActiveMQComponent">
+        <property name="configuration" ref="jmsConfig"/>
+    </bean>
+
+    <camel:camelContext xmlns="http://camel.apache.org/schema/spring">
+        <camel:route>
+            <camel:from uri="activemq:queue:queue1"/>
+            <camel:to uri="bean:consumer"/>
+        </camel:route>
+    </camel:camelContext>
+
+    <task:scheduled-tasks scheduler="scheduler">
+        <task:scheduled ref="producer" method="produce" cron="* * * * * ?"/>
+    </task:scheduled-tasks>
+
+    <task:scheduler id="scheduler" />
+
+    <bean id="producer" class="com.devesion.examples.camel.Producer">
+        <property name="jmsTemplate" ref="jmsTemplate" />
+    </bean>
+
+    <bean id="consumer" class="com.devesion.examples.camel.Consumer" />
+</beans>
